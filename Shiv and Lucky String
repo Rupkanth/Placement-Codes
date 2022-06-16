@@ -1,0 +1,22 @@
+  n=int(input())
+a=input()
+arr=[]
+less=0
+more=0
+equal=0
+cap=0
+for i in a:
+ if i.isupper():
+  cap+=1
+  break
+a=a.lower()
+for i in range(len(a)//2):
+ if(a[i]<a[i+len(a)//2]):
+  less+=1
+ elif(a[i]==a[len(a)-i-1]):
+  equal+=1
+ else:
+  more+=1
+ 
+print(n//2-max([less,more,equal])+cap)
+
