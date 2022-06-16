@@ -1,0 +1,89 @@
+  import java.util.*;
+import java.lang.*;
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        List<Toy>list=new ArrayList<>();
+        Scanner sc=new Scanner(System.in);
+        String  num=sc.nextLine();
+        int n=Integer.parseInt(num);
+        for(int i=0;i<n;i++)
+        {
+            String id=sc.nextLine();
+            String name=sc.nextLine();
+            String quantity=sc.nextLine();
+            Toy toy=new Toy(Integer.parseInt(id),name,Double.parseDouble(quantity));
+            list.add(toy);
+        }
+        double avg=findAverageQuantityOfToy(list);
+        System.out.println("Average quantity:"+avg);
+        int id=sc.nextInt();
+        Toy toy=searchToyById(list, id);
+        if(toy!=null)
+        {
+        System.out.println("id-"+toy.getId());
+        System.out.println("name-"+toy.getName());
+        System.out.println("quantity-"+toy.getQuantity());
+        }
+        else
+        {
+            System.out.println("No Toy found with the mentioned attribute");
+        }
+    }
+//Method1
+    public static double findAverageQuantityOfToy(List<Toy>list)
+    {
+        double sum=0;
+        for(int i=0;i<list.size();i++)
+        {
+            sum+=list.get(i).getQuantity();
+        }
+        return sum/4;
+    }
+//Method2
+    public static Toy searchToyById(List<Toy>list,int id)
+    {
+        Toy toy=null;
+        for(int i=0;i<list.size();i++)
+        {
+            if(list.get(i).getId()==id)
+               toy= list.get(i);
+        }
+        return toy;
+    }
+}
+class Toy
+{
+    private int id;
+    private String name;
+    private double quantity;
+    public Toy(int id,String name,double quantity)
+    {
+        this.id=id;
+        this.name=name;
+        this.quantity=quantity;
+    }
+    public void setId(int id)
+    {
+        this.id=id;
+    }
+    public int getId()
+    {
+        return id;
+    }
+    public void setName(String name)
+    {
+        this.name=name;
+    }
+    public String getName()
+    {
+        return name;
+    }
+    public void setQuantity(double quantity)
+    {
+        this.quantity=quantity;
+    }
+    public double getQuantity()
+    {
+        return quantity;
+    }
+}
