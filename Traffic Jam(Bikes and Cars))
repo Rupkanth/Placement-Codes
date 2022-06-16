@@ -1,0 +1,20 @@
+  
+def answer(Q,Arr):
+    res=0
+    for i in range(Q):
+        if abs(Arr[i][0]-Arr[i][1])<=Arr[i][2]:
+            ans=1
+        else:
+            ans=0
+        res=res+ans*(2**(i+1))
+    return (res%((10**9)+7))
+    
+    
+    
+q=int(input())
+res=0
+arr=[]
+for i in range(q):
+    arr.append(list(map(int,input().split(' '))))
+
+print(answer(q,arr))
