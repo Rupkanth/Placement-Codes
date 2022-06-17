@@ -1,0 +1,20 @@
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+class BankRobbery
+{
+public static void main(String[] args)
+{
+Scanner s=new Scanner)System.in);
+int t=s.nextInt();
+for(int i=0;i<t;i++)
+{
+int m=s.nextInt();
+double p=s.nextDouble();
+int r=m;
+double chef;
+chef=1000000000*(1-(Math.pow(-p,m)))/(1+p);
+System.out.println(chef+" "+(1000000000-chef));
+}
+}
+}
