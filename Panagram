@@ -1,0 +1,14 @@
+def isPanagram(pangram):
+  x='abcdefghijklmnopqrstuvwxyz'
+  c=[]
+  for i in pangram:
+    a=0
+    for j in x:
+       if j not in i:
+         c.append('0')
+         a=1
+         break
+    if a==0:
+      c.append('1')
+  return c
+      
