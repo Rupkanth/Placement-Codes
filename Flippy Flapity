@@ -1,0 +1,19 @@
+x=[0 for i in range(A)]
+y=x.copy()
+res=[]
+for i in B:
+  print(x,y,i)
+  if i[0]==1:
+     for j in range(i[1]-1,i[2]):
+        if x[j]==0:
+           x[j]=1
+        elif x[j]==1:
+           x[j]=0
+  elif i[0]==2:
+     for j in range(A):
+       y[j]=y[j]+x[j]*i[1]
+  elif i[0]==3:
+    res.append(y[i[1]-1])
+ return res
+  
+  
