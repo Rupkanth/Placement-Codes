@@ -1,0 +1,19 @@
+public static int maxPosPrefixes(List<Integer> arr)
+{
+Collections.sort(arr,Collections.recverseOrder());
+long sum=arr.get(0);
+int count=0;
+if(arr.get(0)>0)
+{
+count++;
+}
+for(int i=1;i<arr.size();i++)
+{
+if(arr.get(i)+sum>0)
+{
+count++;
+}
+sum+=arr.get(i);
+}
+return count;
+}
