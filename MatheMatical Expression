@@ -1,0 +1,47 @@
+String[] values = variableValues.split(";");
+        char[] num = new char[26];
+        for(String s:values){
+            char ch = s.charAt(0);
+            int idx=1;
+            while(ch==' '){
+                ch=s.charAt(idx);
+                idx++;
+            }
+            char nh = '-';
+            idx=1;
+            while(!(nh>='0' && nh<='9')){
+                nh = s.charAt(idx);
+                idx++;
+            }
+            num[ch-'a']=nh;
+        }
+        String res= "";
+        for(int i=0;i<expression.length();i++){
+            char ch = expression.charAt(i);
+            if(ch>='a' && ch<='z'){
+                res+=num[ch-'a'];
+            }else res+=ch;
+        }
+        System.out.println(res);
+
+//Method2
+String[] split = variables.split(";");
+        List<String> strings = Arrays.asList(split);
+        Map<String, String> map = new HashMap<>();
+        strings.forEach(
+                e->
+                {
+                    String[] split1 = e.split("=");
+                    if( split1.length > 1 ) {
+                        String variable = split1[0];
+                        String value = split1[1];
+                        map.put(variable, value);
+                    }
+                }
+
+        );
+
+        for(String key : map.keySet()) {
+            expression = expression.replace(key, map.get(key));
+        }
+        System.out.println(expression);
