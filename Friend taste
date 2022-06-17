@@ -1,0 +1,10 @@
+int FriendsTaste(int n) 
+{ 
+    int a=(~n)+1; 
+    int t=a&n; 
+    int x=n+t; 
+    int y=x^n; 
+    y=y/t; 
+    y=y>>2; 
+    return x+y; 
+}
