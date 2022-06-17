@@ -1,0 +1,5 @@
+def anagramCheck(cls,input1,input2):
+  if(sorted(input1)==sorted(input2)):
+    return "yes"
+  else:
+    return "no"
