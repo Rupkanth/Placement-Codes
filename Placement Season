@@ -1,0 +1,19 @@
+def isprime(c):
+    if c<=1:
+        return 0
+    for j in range(2,int(c**(.5))+1):
+        if c%j==0:
+            return 0
+    return 1
+
+stri=input()
+st=set()
+for i in range(len(stri)):
+    temp=""
+    for j in range(i,len(stri)):
+        temp+=stri[j]
+        if isprime(int(temp)):
+            print(int(temp))
+            st.add(int(temp))
+
+print(sum(st))
