@@ -1,0 +1,16 @@
+def substrDeletion(string,length):
+  count0=0
+  count1=0
+  for i in range(length):
+     if(string[i]=='0'):
+        count0+=1
+     else:
+        count1+=1
+  return min(count0,count1)
+for i in range(int(input)):
+  length=int(input)
+  string=input()
+  if(substrDeletion(string,length)%2==0):
+     print("joe")
+  else:
+     print("john")
