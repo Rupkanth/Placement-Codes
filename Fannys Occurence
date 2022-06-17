@@ -1,0 +1,9 @@
+def a1(a,b):
+ s=""
+ for i in a:
+  if i!=b:
+   s=s+i
+ print(s)
+a=input()
+b=input()
+a1(a,b)
