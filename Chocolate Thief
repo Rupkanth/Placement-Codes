@@ -1,0 +1,42 @@
+Chocolate thief code
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+bool isP(int A[], int n, int H, int K)
+{
+  int time = 0;
+
+  for (int i = 0; i < n; ++i)
+    time += (A[i] - 1) / K + 1;
+
+  return time <= H;
+}
+int speed(int A[], int n, int H)
+{
+  if (H < n)
+    return -1;
+  int* max = max_element(A, A + n);
+
+  int lo = 1, hi = *max;
+  while (lo < hi) {
+    int mi = lo + (hi - lo) / 2;
+    if (!isP(A, n, H, mi))
+      lo = mi + 1;
+    else
+      hi = mi;
+  }
+
+  return lo;
+}
+int main()
+{
+    int n,h;
+    cin>>n>>h;
+    int a[n];
+    for(int i = 0;i<n;i++)
+        cin>>a[i];
+  cout << speed(a, n, h);
+
+  return 0;
+}
