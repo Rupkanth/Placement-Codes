@@ -1,0 +1,8 @@
+ def substitutevariable(s,arr):
+  arr=arr.split(";")
+  #print(arr)
+  for i in range(len(arr)):
+    x=arr[i]
+    x=x.replace(" ","")
+    #print(x)
+    #print(x[0],x[1],x[2])
