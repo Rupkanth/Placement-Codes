@@ -1,0 +1,9 @@
+def solve(A,B):
+  c=[]
+  for i in A:
+    for j in B:
+       c.append(i|j)
+  x=0
+  for i in c:
+    x^=i
+  return x
