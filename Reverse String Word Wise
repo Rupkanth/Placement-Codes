@@ -1,0 +1,11 @@
+public string erverseString(String input1)
+{
+String words[]=input1.split("\\s");
+String reverseWord="";
+for(String w:words)
+{
+StringBuilder sb=new StringBuilder(w);
+reverseword=sb.toString()+" "+reverseword;
+}
+return reverseword.trim()
+}
