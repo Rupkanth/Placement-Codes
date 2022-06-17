@@ -1,0 +1,16 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int plants = sc.nextInt();
+		int good = sc.nextInt();
+		int bad = sc.nextInt();
+		
+		if(plants < good){
+		    System.out.println(plants);
+		} else if(plants > good){
+		    System.out.println(good);
+		}
+	}
+}
