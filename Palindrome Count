@@ -1,0 +1,7 @@
+def countPalindromes(cls,input1,input2):
+ cls=input1.split()
+ cnt=0
+ for i in cls:
+   if i==i[::-1]:
+     cn+=1
+ return cnt
