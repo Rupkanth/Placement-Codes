@@ -1,0 +1,16 @@
+def solve(self,A,B):
+  arr=[]
+  for j in range(1,A+1):
+    res=1
+    for k in range(1,j+1):
+      res*=k
+    arr.append(res+B)
+  count=0
+  for j in arr:
+    if j>1:
+      for k in range(2,j):
+         if j%k==0:
+            break
+      else:
+          count+=1
+   return (count)
