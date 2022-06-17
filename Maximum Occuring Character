@@ -1,0 +1,12 @@
+def maxElement(cls,input1):
+  a=[i for i in input1]
+  b=[]
+  x=max(set(a),key=a.count)
+  for i in list(set(a)):
+    c=[i,inpu1.count(i)]
+    b.append(c)
+  ch=''
+  for i in b:
+    if a.count(x)==i[1] and x!=i[0]:
+      return str(0)
+  return x
