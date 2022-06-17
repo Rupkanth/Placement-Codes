@@ -1,0 +1,14 @@
+n=int(input())
+c=0
+for i in range(n):
+    k=int(input())
+    c=0
+    a=list(map(int,input().split()))
+    b=list(map(int,input().split()))
+    for j in range(len(a)):
+        if(a[j]>b[j]):
+            c+=1
+    if(c==len(a)):
+        print("Yes")
+    else:
+        print("No")
