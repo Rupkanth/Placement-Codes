@@ -1,0 +1,26 @@
+public static int solve(int[] arr,int[] brr)
+{
+int op=0;
+for(int i=0;i<arr.length;){
+if(arr[i]<brr[i])
+return -1;
+if(arr[i]==brr[i])
+{
+i++;
+}
+else
+{
+int s=i++;
+while(i<arr.length && arr[i]>brr[i])
+i++;
+int r=0;
+for(int j=s;j<i;j++)
+r=Math.max(brr[j],r);
+int count=1;
+for(int j=s;j<i;j++)
+if(brr[j]<r)
+count++;
+}
+}
+return op;
+}
