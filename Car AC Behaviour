@@ -1,0 +1,133 @@
+public class Car 
+{ 
+private int yearModel; 
+private String make; 
+private int speed; 
+// The constructor accept the car's year model and make as argument 
+// The constuctor should assign 0 to the speed field 
+
+public Car (int yrModel, String carMake) 
+{
+ yearModel = yrModel; 
+make = carMake; 
+speed = 0; 
+} 
+public void setyearModel(int yrModel) 
+{ 
+yearModel = yrModel; 
+} 
+public void setMake (String carMake) 
+{ 
+make = carMake; 
+} 
+public void setSpeed(int carSpeed) 
+{
+ speed = carSpeed; 
+}
+public int getYearModel() 
+{ 
+return yearModel;
+ } 
+public String getMake ()
+ { 
+return make; 
+}
+ public int getSpeed () 
+{ 
+return speed; 
+} 
+public void AccelerateSpeed (int speed)
+ { 
+speed = speed + 5;
+ } 
+public void BrakeSpeed (int speed) 
+{ 
+speed = speed - 5; 
+} } ] [/import javax.swing.JOptionPane;
+
+ public class MyNewCar { 
+public static void main(String[] args) 
+{ 
+Car myCar = new Car (2010, "Honda"); 
+int speed = myCar.getSpeed();
+ speed = Integer.parseInt(JOptionPane.showInputDialog("Enter Your Speed" )); 
+for (int i = 0; i < 5; i++)
+ { public class Car 
+{ 
+private int yearModel; 
+private String make; 
+private int speed; 
+// The constructor accept the car's year model and make as argument 
+// The constuctor should assign 0 to the speed field 
+
+public Car (int yrModel, String carMake) 
+{
+ yearModel = yrModel; 
+make = carMake; 
+speed = 0; 
+} 
+public void setyearModel(int yrModel) 
+{ 
+yearModel = yrModel; 
+} 
+public void setMake (String carMake) 
+{ 
+make = carMake; 
+} 
+public void setSpeed(int carSpeed) 
+{
+ speed = carSpeed; 
+}
+public int getYearModel() 
+{ 
+return yearModel;
+ } 
+public String getMake ()
+ { 
+return make; 
+}
+ public int getSpeed () 
+{ 
+return speed; 
+} 
+public void AccelerateSpeed (int speed)
+ { 
+speed = speed + 5;
+ } 
+public void BrakeSpeed (int speed) 
+{ 
+speed = speed - 5; 
+} } ] [/import javax.swing.JOptionPane;
+
+ public class MyNewCar { 
+public static void main(String[] args) 
+{ 
+Car myCar = new Car (2010, "Honda"); 
+int speed = myCar.getSpeed();
+ speed = Integer.parseInt(JOptionPane.showInputDialog("Enter Your Speed" )); 
+for (int i = 0; i < 5; i++)
+ { 
+System.out.println("The" + " " + myCar.getYearModel() + " " + myCar.getMake() + " " + "is going " );
+ myCar.AccelerateSpeed(speed); 
+System.out.println("Your Speed now is: " + speed); 
+} 
+speed = Integer.parseInt(JOptionPane.showInputDialog("Enter Your Speed" )); 
+
+for (int i = 0; i < 5; i++)
+ { 
+System.out.println("The" + " " + myCar.getYearModel() + " " + myCar.getMake() + " " + "is going " );
+ myCar.BrakeSpeed(speed); System.out.println("Your Speed now is: " + speed); } } }
+
+
+Car ac behaviour code in java
+System.out.println("The" + " " + myCar.getYearModel() + " " + myCar.getMake() + " " + "is going " );
+ myCar.AccelerateSpeed(speed); 
+System.out.println("Your Speed now is: " + speed); 
+} 
+speed = Integer.parseInt(JOptionPane.showInputDialog("Enter Your Speed" )); 
+
+for (int i = 0; i < 5; i++)
+ { 
+System.out.println("The" + " " + myCar.getYearModel() + " " + myCar.getMake() + " " + "is going " );
+ myCar.BrakeSpeed(speed); System.out.println("Your Speed now is: " + speed); } } }
+
