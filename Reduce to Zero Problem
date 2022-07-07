@@ -1,0 +1,48 @@
+ #include<iostream>
+using namespace std;
+
+int main()
+{
+    int i;
+    cin>>i;
+    while(i--)
+    {
+        long long int x,y,count=0;
+        cin>>x>>y;
+        if(x==y)
+        {
+            cout<<x<<endl;
+            break;
+        }
+        else
+      {
+        int mini=min(x,y);
+        int maxu=max(x,y);
+        if(maxu%2!=0)
+        {
+            cout<<"-1"<<endl;
+            
+        }
+        else
+        {
+            while(mini<maxu)
+            {
+                mini*=2;
+                count++;
+            }
+
+            if(mini==maxu)
+            {
+               // cout<<"shi h"<<endl;
+                int ans=maxu+count;
+                cout<<ans<<endl;
+            }
+            else
+            {
+                cout<<"-1"<<endl;
+            }
+        }
+      }
+    }
+    return 0;
+}
