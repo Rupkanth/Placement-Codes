@@ -1,0 +1,26 @@
+ //java
+ 
+ public static void energyfest(int N,int[] energies)
+ {
+ int count=0;
+ List <Integer> array=new ArrayList<>();
+ for(int i=0;i<N;i++_
+ {
+ array.add(energies[i]);
+ }
+ while(true){
+ int size=array.size();
+ List <Integer> temp=new ArrayList<>(array);
+ for(int i=1;i<size;i++){
+if(array.get(i)>array.get(i-1)){
+temp.remove(array.get(i));
+}
+}
+array=new ArrayList<Integer>(temp);
+count++;
+if(size==(array.size)){
+break;
+}
+}
+System.out.println(--count);
+}
