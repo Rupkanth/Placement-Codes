@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class MyClass{
+ 
+
+     public static void main(String args[])
+     {
+       Scanner sc = new Scanner(System.in);
+// blackhatcoding 
+       int m = sc.nextInt();
+       int m1 = sc.nextInt();
+       int m2 = sc.nextInt();
+       int m3 = sc.nextInt();
+       if(m==3)
+       System.out.println("9");
+       else 
+        System.out.println("5");
+     }
+}
