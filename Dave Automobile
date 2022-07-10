@@ -13,3 +13,21 @@ public class MyClass{
        else System.out.println("3 3");
      }
 }
+
+//Python
+
+a=int(input())
+b=int(input())
+mn=0
+mx=0
+res=0
+for i in range(1,a):
+  mn+=i
+for i in range(1,a):
+  if res<b:
+    res=b-res
+    mx+=(i(res))
+    if res>=(a-i):
+      break
+    res-=1
+print(mn.mx)
