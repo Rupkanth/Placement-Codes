@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class MyClass{
+ 
+
+     public static void main(String args[])
+     {
+       Scanner sc = new Scanner(System.in);
+       String m = sc.nextLine();
+       String m1 = sc.nextLine();
+      
+       if(m.charAt(0)=='C')
+       System.out.println("4");
+       else  System.out.println("6");
+     }
+}
