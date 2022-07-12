@@ -1,0 +1,12 @@
+//C++
+
+int internNumber(input1,input2){
+long long i=1;
+int p=input2,n=input1;
+while(p%5000!=0 || p/5000>n){
+p-=(5000+i);
+i++;
+}
+return p/5000;
+}
+
