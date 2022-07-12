@@ -1,0 +1,13 @@
+def getMinimumCost(arr):
+ n=len(arr)
+ m=0
+ ans=0
+ for i in range(n-1):
+   a,b=arr[i],arr[i=1]
+   m=max(m,abs(a-b))
+   ans+=((a-b)**2)
+ if m%2==0:
+   ans=ans-m**2/2
+ else:
+   ans=ans-m**2+((m-1)/2)**2+((m+1)/2)**2
+ return int(ans)
