@@ -1,0 +1,9 @@
+class UserMainCode(object):
+   def StreetPlaning(cls,input1):
+        a=[0,1,1]
+        b=[0,1,2]
+        for i in range(3,input1+1):
+             a+=[b[i-1]]
+             b+=[a[i-1]+b[i-1]]
+        r=a[input1]+b[input1]
+        return r*r
