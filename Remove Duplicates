@@ -1,0 +1,20 @@
+//Python
+
+class UserMainCode(object):
+  def RemoveDuplicates(cls,input1,input2):
+    ans=[]
+    for i in range(input2):
+       if input1[i] not in ans:
+            ans.append(input1[i])
+     return ans
+     
+ //Python
+ 
+ def RemoveDuplicates(cls,input1,input2):
+  freq={}
+  for i in input1:
+    if i in freq:
+     freq[i]+=1
+    else:
+     freq[i]=1
+return list(freq)
