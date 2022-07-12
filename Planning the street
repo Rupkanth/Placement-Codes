@@ -1,0 +1,62 @@
+//Python
+
+def king_george(number: int) -> int:
+    x = [0, 1, 1]
+    y = [0, 1, 2]
+    for i in range(3, number + 1):
+        x += [y[i - 1]]
+        y += [x[i - 1] + y[i - 1]]
+    result = x[number] + y[number]
+    return result * result
+
+n = king_george(int(input()))
+print(n)
+
+//C++
+
+def king_george(number: int) -> int:
+    x = [0, 1, 1]
+    y = [0, 1, 2]
+    for i in range(3, number + 1):
+        x += [y[i - 1]]
+        y += [x[i - 1] + y[i - 1]]
+    result = x[number] + y[number]
+    return result * result
+
+n = king_george(int(input()))
+print(n)
+
+//Java
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class CodeWindow
+{
+    static void king_george(int number) {
+        int x[] = new int[100];
+        x[0] = 0;
+        x[1] = 1;
+        x[2] = 1;
+        int y[] = new int[100];
+        y[0] = 0;
+        y[1] = 1;
+        y[2] = 2;
+        for(int i=3;i<=number;i++) {
+            x[i] += y[i - 1];
+            y[i] += x[i - 1] + y[i - 1];
+        }
+        int result = x[number] + y[number];
+        System.out.println(result * result);
+    }
+    
+	public static void main (String[] args) throws Exception
+	{
+		// your code goes here
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());
+		king_george(n);
+	}
+}
