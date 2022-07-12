@@ -1,0 +1,10 @@
+class UserMainCode(object):
+ def characterAt9cls,input1,input2):
+    s=input1[::-1]
+    res=""
+    for i in range(0,len(s),2):
+      res+=int(s[i])*s[i+1]
+     res=res[::-1]
+     if len(res)>=input2:
+      return res[input2-1]
+     return "-1"
