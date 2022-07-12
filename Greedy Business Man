@@ -1,0 +1,14 @@
+a=input2[0]
+b=input2[1]
+c=0
+x=[]
+for i in range(len(a)):
+  t=0
+  x.append(a[i],b[i])
+  for j in range(len(x)-1):
+   if a[i]<=x[i][j]:
+     t=1
+     break
+  if t==0:
+   c+=i
+return c
