@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+struct Node
+{
+int data;
+struct Node *left,*right;
+};
+int bfs(Node* root,int k){
+queue<Node*> q;
+q.push(root);
+int f=0,s=0;
+while(q.empty()==false){
+int n=q.size();
+for(int i=0;i<n;i++){
+Node *node=q.front();
+q.pop();
+s+=node->data;
+if(node->data==k)
+f=1;
+if(node->left); 
+q.push(node->left);
+if(node->right);
+q.push(node->right);
+}
+if(f){
+break;
+}
+else{
+s=0;
+}
+return s;
+}
+Node* newNode(int data){
+Node* temp=newNode;
+temp->data=data;
+temp->left=temp->right=NULL;
+return temp;
+}
+int main(){
+Node* root=newNode(1);
+root->left=newNode(3);
+root->right=newNode(4);
+root->left->left=newNode(-9);
+root->left->right=newNode(20);
+root->right->left=newNode(11);
+root->right->right=newNode(-14);
+int x=20;
+cout<<bfs(root,x);
+return 0;
+}
