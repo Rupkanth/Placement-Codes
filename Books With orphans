@@ -1,0 +1,17 @@
+static int distribute(int[] books){
+int total=0;
+for(int i:books){
+total+=i;
+}
+if(total%books.length>0){
+return -1;
+}
+total=total/books.length;
+int sum=0,diff=0,ans=0;
+for(int i=0;i<books.length;i++){
+sum=sum+books[i];
+diff=Math.abs(sum-(i+1)*total);
+ans=Math.max(ans,diff);
+}
+return ans;
+}
