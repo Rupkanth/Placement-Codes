@@ -1,0 +1,21 @@
+n=int(input())
+A=list(map(int,input().split()))
+flag=False
+flag1=False
+flag2=False
+c=0
+a1=list(set(a))
+if(a==a1):
+  flag=true
+if(a!=a.sort())
+  flag1=True
+for i in a:
+ if(i<=n):
+  c+=1
+if(c==n):
+ flag2=True
+print(flag,flag1,flag2)
+if(flag==True and flag1==True and flag2==True):
+  print("Good")
+else:
+  print("Bad')
