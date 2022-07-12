@@ -1,0 +1,91 @@
+//Python
+
+import sys
+
+def minsubarraysum(n, a):
+    min_sum = sys.maxsize
+    curr_sum = 0;
+    for i in range(0, n):
+        curr_sum = curr_sum + a[i]
+        if curr_sum < min_sum:
+            min_sum = curr_sum
+        if curr_sum > 0:
+            curr_sum  = 0
+    return min_sum;
+    
+
+n = int(input())
+arr = list(map(int, input().split(" ")))
+s = sum(arr)
+min_sum = minsubarraysum(n, arr)
+ans = s + min_sum * (-2)
+print(ans)
+
+//C++
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int minsubarraysum(int a[], int n) {
+    int min_sum = INT_MAX;
+    int curr_sum = 0;
+    for (int i = 0 ; i < n; i++) {
+        curr_sum = curr_sum + a[i];
+        if (curr_sum < min_sum)
+            min_sum = curr_sum;
+        if (curr_sum > 0)
+            curr_sum  = 0;
+    }
+    return min_sum;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    int a[n];
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+        sum += a[i];
+    }
+    int min_sum = minsubarraysum(a, n);
+    int ans = sum + (min_sum * (-2));
+    cout << ans;
+}
+
+//Java
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class CodeWindow
+{
+    static int minsubarraysum(int a[], int n) {
+        int min_sum = Integer.MAX_VALUE;
+        int curr_sum = 0;
+        for (int i = 0 ; i < n; i++) {
+            curr_sum = curr_sum + a[i];
+            if (curr_sum < min_sum)
+                min_sum = curr_sum;
+            if (curr_sum > 0)
+                curr_sum  = 0;
+        }
+        return min_sum;
+    }
+    
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int a[] = new int[n];
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+            sum += a[i];
+        }
+        int min_sum = minsubarraysum(a, n);
+        int ans = sum + (min_sum * (-2));
+        System.out.println(ans);
+    }
+}
