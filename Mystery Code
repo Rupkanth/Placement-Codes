@@ -1,0 +1,11 @@
+public static long getMystery(int[] arr,int l,int r,int sum){
+long ans=0;
+for(int i=1;i<arr.length;i++){
+for(int j=0;j<i;j++){
+if(arr[i]>arr[j]){
+ans+=arr[j];
+}
+}
+}
+return ans;
+}
