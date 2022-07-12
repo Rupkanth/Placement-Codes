@@ -1,0 +1,91 @@
+//Python
+
+def calculateTime(X, Y, n, walls):
+    jumps = 0
+    for i in range(0, n):
+        reach = X
+        jump = 1
+        while reach < walls[i]:
+            reach += (X-Y)
+            jump += 1
+        jumps += jump
+    return jumps;        
+    
+
+X = int(input())
+Y = int(input())
+n = int(input())
+walls = list(map(int, input().split(" ")))
+print(calculateTime(X, Y, n, walls))
+
+//C++
+
+#include <bits/stdc++.h>
+#include <iostream>
+using namespace std;
+
+int calculateJumps(int X, int Y, int n, int walls[])
+{
+    int jumps = 0;
+    for(int i=0;i<n;i++) {
+        int reach = X;
+        int jump = 1;
+        while(reach < walls[i]) {
+            reach += (X-Y);
+            jump += 1;
+        }
+        jumps += jump;
+    }
+    return jumps;
+}
+
+int main()
+{
+    int X;
+    cin >> X;
+    int Y;
+    cin >> Y;
+    int n;
+    cin >> n;
+    int walls[n];
+    for(int i=0;i<n;i++)
+        cin >> walls[i];
+    cout << calculateJumps(X, Y, n, walls);
+    return 0;
+}
+
+//Java
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class CodeWindow
+{
+    static int calculateJumps(int X, int Y, int n, int walls[])
+    {
+        int jumps = 0;
+        for(int i=0;i<n;i++) {
+            int reach = X;
+            int jump = 1;
+            while(reach < walls[i]) {
+                reach += (X-Y);
+                jump += 1;
+            }
+            jumps += jump;
+        }
+        return jumps;
+    }
+
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int X = sc.nextInt();
+        int Y = sc.nextInt();
+        int n = sc.nextInt();
+        int walls[] = new int[n];
+        for(int i=0;i<n;i++)
+            walls[i] = sc.nextInt();
+        System.out.println(calculateJumps(X, Y, n, walls));
+    }
+}
