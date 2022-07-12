@@ -1,0 +1,43 @@
+import java.util.*;
+public class Jack{
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+int arrSize=sc.nextInt();
+int wallSize=sc.nextInt();
+int[] boxArr=new int[arrSize];
+int calBox=0;
+for(int loop=0;loop<arrSize;loop++){
+boxArr[loop]=sc.nextInt();
+}
+for(int loop=0;
+loop<arrSize;loop++){
+if(boxArr[loop]>wallSize){
+calBox++;
+}
+}
+if(calBox>=2)
+System.out.println(2);
+else
+System.out.println(-1);
+}
+
+//Smart Dictionary
+
+n=input1
+l=input2
+if(n==0 or len(1)==0):
+  return 0;
+elif(n==1 or len(1)==1):
+   return(len(1[0]))
+else:
+   m=l[0]
+   f=0
+   for j in range(len(m)):
+    for i in l:
+      if(i[:j+1]!=m[:j+1]):
+           f=1
+           break
+    if(f):
+       return j
+return j
+}
