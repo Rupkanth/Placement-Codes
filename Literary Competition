@@ -1,0 +1,90 @@
+//Python
+
+def CalculateTime(W, wt, val, n):
+    if n == 0 or W == 0:
+        return 0
+
+    if (wt[n-1] > W):
+        return CalculateTime(W, wt, val, n-1)
+    else:
+        return max(val[n-1] + CalculateTime(W-wt[n-1], wt, val, n-1), CalculateTime(W, wt, val, n-1))
+
+
+
+n = int(input())
+W = int(input())
+val = list(map(int, input().split(" ")))
+wt = list(map(int, input().split(" ")))
+print(CalculateTime(W, wt, val, n))
+
+//C++
+
+#include <bits/stdc++.h>
+#include <iostream>
+using namespace std;
+
+int max(int a, int b) { return (a > b) ? a : b; }
+
+int knapSack(int W, int wt[], int val[], int n)
+{
+    if (n == 0 || W == 0)
+        return 0;
+
+    if (wt[n - 1] > W)
+        return knapSack(W, wt, val, n - 1);
+    else
+        return max(val[n - 1] + knapSack(W - wt[n - 1], wt, val, n - 1), knapSack(W, wt, val, n - 1));
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    int W;
+    cin >> W;
+    int val[n];
+    int wt[n];
+    for(int i=0;i<n;i++)
+        cin >> val[i];
+    for(int i=0;i<n;i++)
+        cin >> wt[i];
+    cout << knapSack(W, wt, val, n);
+    return 0;
+}
+
+//Java
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class CodeWindow
+{
+    static int max(int a, int b)
+    {
+      return (a > b) ? a : b;
+    }
+    static int calculateTime(int W, int wt[], int val[], int n)
+    {
+        if (n == 0 || W == 0)
+            return 0;
+        if (wt[n - 1] > W)
+            return calculateTime(W, wt, val, n - 1);
+        else
+            return max(val[n - 1] + calculateTime(W - wt[n - 1], wt, val, n - 1), calculateTime(W, wt, val, n - 1));
+    }
+
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int W = sc.nextInt();
+        int val[] = new int[n];
+        int wt[] = new int[n];
+        for(int i=0;i<n;i++)
+            val[i] = sc.nextInt();
+        for(int i=0;i<n;i++)
+            wt[i] = sc.nextInt();
+        System.out.println(calculateTime(W, wt, val, n));
+    }
+}
