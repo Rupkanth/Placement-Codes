@@ -1,0 +1,14 @@
+int MSkills(int N,int A,int B){
+int l=0,r=N,ans=0;
+while(l<=r){
+int mid=(l+r)/2;
+if(mid*B<=(N-mid)*A){
+ans=mid;l=mid+1;
+}
+else
+{
+r=mid-1;
+}
+}
+return ans;
+}
