@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+struct Node{
+int data
+Node *left,*right;
+Node(int data){
+this->data=data;
+this->left=this->right=nullptr;
+}
+};
+Node* insert(Node* root,int key){
+if(root==nullptr){
+return new Node(key);
+}
+if(key<root->data){
+root->left=insert(root->left,key);
+}
+else{
+root->right=insert(root->right,key);
+}
+return root;
+}
+bool findSubTrees(Node* root,int low,int high,int &count){
+if(root==nullptr){
+return true;
+}
+bool left=findSubTrees(root->left,low,high,count);
+bool right=findSubTrees(root-.right,low,high,count);
+if(left && right && (root->data >=low && root->data<=high)){
+count++;
+return true;
+}
+return false;
+}
+int main(){
+int low=5,high=17;
+int keys[]={7,5,11,2,6,9,15};
+Node* root=nullptr;
+for(int key:keys){
+root=insert(root,key);
+}
+int count=0;
+findSubTrees(root,low,high,count);
+cout<<"The total number of sub trees is"<<count;
+return 0;
+}
