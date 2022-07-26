@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int countPairSum(vector<int>&arr, int L,  int R, int N)
+{
+
+  sort(arr.begin(),arr.end());
+
+  int right = N - 1, count = 0;
+
+  while (right > 0) {
+
+    auto it1
+      = lower_bound(arr.begin(),arr.end(),L - arr[right]);
+
+    int start = it1 - arr.begin();
+
+    auto it2
+=upper_bound(arr.begin(),arr.end(),R- arr[right]);
+
+
+    --it2;
+
+    int end = it2 - arr.begin();
+
+    end = min(end, right - 1);
+
+    if (end - start >= 0) {
+      count += (end - start + 1);
+    }
+
+    right--;
+  }
+
+  return count;
+}
+
+int main()
+{
+  int n,l,r;
+  cin>>n;
+  vector<int>arr(n);
+  for(int i=0;i<n;i++){
+    cin>>arr[i];
+  }
+  cin>>l>>r;
+
+  cout << countPairSum(arr, l,r,n);
+
+  return 0;
+}
