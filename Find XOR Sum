@@ -1,0 +1,46 @@
+def findXor(arr,n):
+ 
+    # Calculate xor of
+    # all the elements
+    xoR = 0;
+    for i in range (0, n ) :
+        xoR = xoR ^ arr[i]
+     
+    # Return twice of
+    # xor value
+    return xoR * 2
+ 
+# Driver code
+arr = [ 1, 5, 6 ]
+n = len(arr)
+print(findXor(arr, n)) 
+
+
+Solution 2:
+def findXorSum(arr, n):
+     
+    # variable to store the final Sum
+    Sum = 0
+ 
+    # multiplier
+    mul = 1
+ 
+    for i in range(30):
+        c_odd = 0
+        odd = 0
+        for j in range(n):
+            if ((arr[j] & (1 << i)) > 0):
+                odd = (~odd)
+            if (odd):
+                c_odd += 1
+        for j in range(n):
+            Sum += (mul * c_odd)
+ 
+            if ((arr[j] & (1 << i)) > 0):
+                c_odd = (n - j - c_odd)
+ 
+        mul *= 2
+    return Sum
+arr = [3, 8, 13]
+ n = len(arr)
+ print(findXorSum(arr, n))
