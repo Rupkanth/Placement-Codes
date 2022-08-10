@@ -1,0 +1,33 @@
+static void printPrimeTriplets(int n)
+  {
+      int count = 0;
+    // Finding all primes from 1 to n
+    boolean prime[]=new boolean[n + 1];
+    Arrays.fill(prime,true);
+    sieve(n, prime);
+    
+    System.out.println("The prime triplets"+
+            " from 1 to " + n + "are :");
+    
+    for (int i = 2; i <= n-6; ++i) {
+  
+      // triplets of form (p, p+2, p+6)
+      if (prime[i] && prime[i + 2] && prime[i + 6])
+            {System.out.println( i + " " + (i + 2) +
+                  " " + (i + 6));
+             if(i+i+2 == i+6){
+               count++;
+             }
+            }
+      // triplets of form (p, p+4, p+6)
+      else if (prime[i] && prime[i + 4] &&
+          prime[i + 6]){
+              if(i+i+4 == i+6){
+               count++;
+             }
+            }
+        
+        System.out.println(i + " " + (i + 4) +
+                " " + (i + 6));
+    }
+    }
