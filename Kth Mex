@@ -1,0 +1,20 @@
+int kthMex(int N, int K, int A[]) {
+    // code here
+    int count = 1;
+    unordered_map<int,int> mp;
+    for(int i=0;i<N;i++){
+        mp[A[i]]++;
+    }
+    for(int i=0;i<=1000000000;i++){
+        if(mp.find(i)==mp.end()){
+            if(count==K){
+                return i;
+                break;
+            }
+            count++;
+        }
+    }
+}
+
+
+C++
