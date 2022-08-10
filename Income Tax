@@ -15,3 +15,41 @@ double calculateIncome(double income)
     else
         return income * 0.30;
 }
+
+//Python
+
+income = int(input())
+
+if income <= 250000:  
+    tax = 0
+elif income <= 500000: 
+    tax = (income - 250000) * 0.05
+    tax = tax * 0.04 + tax
+elif income <= 750000:
+    tax = (income - 500000) * 0.10 + 12500 
+    tax = tax * 0.04 + tax
+elif income <= 1000000: 
+    tax = (income - 750000) * 0.15 + 37500 
+    tax = tax * 0.04 + tax
+elif income <= 1250000:
+    tax = (income - 1000000) * 0.20 + 75000 
+    tax = tax * 0.04 + tax
+elif income <= 1500000: 
+    tax = (income - 1250000) * 0.25 + 125000 
+    tax = tax * 0.04 + tax
+else:
+    tax = (income - 1500000) * 0.30 + 187500
+    if income > 5000000:
+        tax += tax * 0.10 
+        tax += tax * 0.04 
+    if income > 10000000:
+        tax += tax * 0.15
+        tax += tax * 0.4
+    if income > 20000000:
+        tax += tax * 0.25
+        tax += tax * 0.4
+    if income > 50000000:
+        tax += tax * 0.37
+        tax += tax * 0.4
+        
+print(int(tax))
