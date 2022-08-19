@@ -1,0 +1,8 @@
+def Cuckoo(n):
+ if n==1:
+  return 0
+ elif n==2:
+  return 1
+ else:
+  k1=2*Cuckoo(n-2)
+  return Cuckoo(n-1)+k1+3
