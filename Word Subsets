@@ -1,0 +1,40 @@
+class Solution
+{
+public:
+    vector<int> frequncey(string s)
+    {
+        vector<int> freq(26, 0);
+        for (int i = 0; i < s.length(); i++)
+            freq[s[i] - 'a']++;
+        return freq;
+    }
+    vector<string> wordSubsets(vector<string> &words1, vector<string> &words2) @examcellsolutions
+    {
+        vector<string> ans;
+        vector<int> Freq(26, 0);
+        for (auto &x : words2)
+        {
+            vector<int> freq1 = frequncey(x);
+            for (int i = 0; i < 26; i++)
+                Freq[i] = max(freq1[i], Freq[i]);
+        }
+@examcellsolutions
+        for (auto &x : words1)
+        {
+            vector<int> freq1 = frequncey(x);
+            bool flag = true;
+            for (int i = 0; i < 26; i++)
+            {
+                if (freq1[i] < Freq[i])
+                {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag)
+                ans.push_back(x);
+        }
+        return ans;
+    }
+};
+
