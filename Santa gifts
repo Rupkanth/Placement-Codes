@@ -1,0 +1,31 @@
+def santa(num,d):
+    if d.get(num):
+        return 1
+    rem = sum = 0;  
+    while(num > 0):  
+        rem = num%10;  
+        sum = sum + (rem*rem);  
+        num = num//10; 
+    return sum
+
+def gift(n):
+    pre = [0 for i in range(n + 1)]
+    d = {}
+    for i in range(1, n + 1):  
+        result = i
+        while(result != 1 and result != 4):  
+            result = santa(result,d);        
+        if(result == 1):
+            d[i] = 1
+            pre[i] += i + pre[i-1]
+        else:
+            pre[i] = pre[i-1]
+        
+    return pre
+
+pre = findall(1000001)
+t = int(input())
+for _ in range(t):
+    l,r = map(int,input().split())
+    print(pre[r] - pre[l-1])
+
