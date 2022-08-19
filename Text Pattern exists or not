@@ -1,0 +1,80 @@
+import numpy as np
+ 
+# Function to check if the pattern
+# consisting of '*', '.' and lowercase
+# characters matches the text or not
+def isMatch(text, pattern):
+     
+  # Base Case
+  if (text == "" or pattern == ""):
+    return False
+ 
+  # Stores length of text
+  N = len(text)
+ 
+  # Stores length of pattern
+  M = len(pattern)
+ 
+  # dp[i][j]: Check if { text[0], .. text[i] }
+  # matches {pattern[0], ... pattern[j]} or not
+  dp = np.zeros((N + 1, M + 1))
+ 
+  # Base Case
+  dp[0][0] = True
+ 
+  # Iterate over the characters
+  # of the string pattern
+  for i in range(M):
+    if (pattern[i] == '*' and dp[0][i - 1]):
+ 
+      # Update dp[0][i + 1]
+      dp[0][i + 1] = True
+ 
+  # Iterate over the characters
+  # of both the strings
+  for i in range(N):
+    for j in range(M):
+ 
+      # If current character
+      # in the pattern is '.'
+      if (pattern[j] == '.'):
+ 
+        # Update dp[i + 1][j + 1]
+        dp[i + 1][j + 1] = dp[i][j]
+ 
+      # If current character in
+      # both the strings are equal
+      if (pattern[j] == text[i]):
+ 
+        # Update dp[i + 1][j + 1]
+        dp[i + 1][j + 1] = dp[i][j]
+ 
+      # If current character
+      # in the pattern is '*'
+      if (pattern[j] == '*'):
+        if (pattern[j - 1] != text[i] and
+            pattern[j - 1] != '.'):
+ 
+          # Update dp[i + 1][j + 1]
+          dp[i + 1][j + 1] = dp[i + 1][j - 1]
+         
+        else:
+ 
+          # Update dp[i+1][j+1]
+          dp[i + 1][j + 1] = (dp[i + 1][j] or
+                              dp[i][j + 1] or
+                              dp[i + 1][j - 1])
+ 
+  # Return dp[M][N]
+  return dp[N][M]
+ 
+# Driver Code
+if name == "main" :
+ 
+  text = "geeksforgeeks"
+  pattern = "ge*ksforgeeks"
+   
+  if (isMatch(text, pattern)):
+    print("Yes")
+  else:
+    print("No")
