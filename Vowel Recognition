@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int t;
+    long int sum=0,l;
+    char s[100000];
+    scanf("%d",&t);
+    while(t--)
+    {
+        scanf("%s",s);
+        l=strlen(s);
+        for(int i=0;s[i];i++)
+        {
+            if(s[i]=='a's[i]=='e's[i]=='i'||s[i]=='o'
+s[i]=='u's[i]=='A's[i]=='E's[i]=='I's[i]=='O's[i]=='U')
+             sum=sum+(i+1)*(l-i);
+
+        }
+        printf("%ld\n",sum);
+        sum=0;
+    }
+    return 0;
+}
