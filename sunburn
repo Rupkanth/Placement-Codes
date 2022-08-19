@@ -1,0 +1,7 @@
+n,k=input().split()
+a=int(n)
+b=int(k)
+if (a%b)==0:
+    print('Y')
+else:
+    print('N')
