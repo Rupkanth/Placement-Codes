@@ -4,3 +4,33 @@ for i in range(int(input())):
         print("wins")
     else:
         print("loses")
+
+
+//C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t,n,rev=0;
+    cin>>n;
+    while(n--)
+    {
+        cin>>t;
+        rev=0;
+        int a;
+        a=t;
+        while(a!=0)
+        {
+            int r=a%10;
+            rev=rev*10+r;
+            a=a/10;
+        }
+        if(rev==t)
+          cout<<"wins"<<endl;
+        else
+          cout<<"losses"<<endl;
+    }
+    
+    return 0;
+}
