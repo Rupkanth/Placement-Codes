@@ -1,0 +1,69 @@
+import java.util.*; 
+ 
+class TestClass { 
+ 
+public static void main(String args[] ) throws Exception { 
+ 
+Scanner sc = new Scanner(System.in); 
+ 
+int n = sc.nextInt(); 
+ 
+int count=0; 
+ 
+int[] sv = new int[n];   //strength of vaccine 
+ 
+int[] mp = new int[n];  //patients 
+ 
+for(int i=0;i<n;i++) 
+ 
+{ 
+ 
+ sv[i] = sc.nextInt(); 
+ 
+} 
+ 
+for(int i=0;i<n;i++) 
+ 
+{ 
+ 
+  mp[i] = sc.nextInt(); 
+ 
+} 
+ 
+Arrays.sort(sv);   //in this place you can use the bubblesort basic logic also. 
+ 
+Arrays.sort(mp); 
+ 
+for(int i=0;i<n;i++) 
+ 
+{ 
+ 
+ if(sv[i]<mp[i]) 
+ 
+ { 
+ 
+    count++; 
+ 
+ } 
+ 
+} 
+ 
+if(count>0) 
+ 
+{ 
+ 
+   System.out.println("No"); 
+ 
+}else 
+ 
+{ 
+ 
+System.out.println("Yes"); 
+ 
+} 
+ 
+} 
+ 
+}
+
+
