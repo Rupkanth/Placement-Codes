@@ -1,0 +1,6 @@
+cls=input1.split() 
+cnt=0 
+for i in cls: 
+  if i==i[::-1]:
+     cnt+=1 
+return cnt
