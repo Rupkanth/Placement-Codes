@@ -1,0 +1,8 @@
+T=int(input())
+for i in range(T):
+  b=int(input())
+  c=str(b)
+  if c==c[::-1]:
+    print("wins")
+  else:
+    print("loose")
