@@ -1,0 +1,33 @@
+1.#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+string temp=";
+int x=0;
+cin>>temp;
+for(auto x:tmep){
+if(x>='1' && x<='9'){
+x+=(x-'0');
+}
+}
+cout<<(X<tmp.size()?"YES":"NO")<<endl;
+}
+2.int i=0;
+int ansIndex=0;
+int n=char.size();
+while(i<n){
+int j=i+1;
+while(j<n && chars[i]==chars[j]){
+j++;
+}
+chars[ansIndex++]=chars[i];
+int count=j-i;
+if(count>1)
+string cnt=to_string(count);
+for(char ch:cnt){
+chars[ansIndex++]=ch;
+}
+}
+i=j;
+}
+
