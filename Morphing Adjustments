@@ -1,0 +1,13 @@
+a=int(input())  
+b=int(input()) 
+c=input()
+m=list(c) 
+d=input() 
+n=list(d) 
+for i in m: 
+ if i in n:
+   n.remove(i)
+ else:
+   pass
+print(len(n))
+
