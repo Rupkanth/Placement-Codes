@@ -1,0 +1,45 @@
+int minProduct(int N,int K,int M,vector<long> A)
+{
+ int ans-1; 
+ vector long>B;
+ B=A;
+ int ne=0, pow=0;
+ long mi=INT_MAX, mx=INT_MAX;
+ for(int i=0;i<n;i++)
+ {
+if(A[i]>=0)
+{
+if(mi>A[i])
+mi=A[i]; 
+po=i;
+}
+}
+else
+{
+1f(mx<A[i])
+{
+mx=A[i]; 
+ne=i;
+}
+}
+14(A[po]>abs(A[ne]))
+{
+B[ne]=B[ne]+(K*M);
+}
+else
+{
+B[P0]=B[po]-(K*M);
+}
+for(int i=0;i<N; i++)
+{
+ans* =B[i]; 
+// cout<<ans<<" ";
+return abs(ans)%1000000007;
+}
+int main() 
+{
+ios::sync_with_stdio(0); 
+cin.tie(0); 
+cout.tie(0); 
+string inputline;
+
