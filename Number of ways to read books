@@ -1,0 +1,8 @@
+for i in range(int (input())):
+   s=int(input()
+   def val(n):
+    if n<=1: return n
+      return val(n-1)+val(n-2) 
+   def ways(s):
+       return val(s+1) 
+   printfways(s)
