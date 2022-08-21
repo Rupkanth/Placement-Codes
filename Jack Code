@@ -1,0 +1,36 @@
+1.public class jack{
+ public static void main(String args){
+Scanner sc = new Scanner(System.in); 
+int arrSize sc.nextInt();
+int wallsize = sc.nextInt();
+int[] boxArnis new int[arrSize];
+for(int loop=0; loop<arrSize;loop++) {
+boxArr[loop] = sc.nextInt();
+for(int loop = 0; loop<arrSize; loop++){ 
+if(boxArr[loop] > Wallsize) {
+calcBox++;
+}
+}
+if(calcBox >=2)
+System.out.println(2); 
+}
+else 
+{
+System.out.println(-1);
+}
+}
+
+2.n=int(input())
+  l=[]
+  for i in range(n):
+    1.append(int(input())) 
+  cn=0 
+ for i in range(n): 
+   for j in range(n-1): 
+      if l[j]>l[j+1]:
+        Cn+=1
+        l[j],l[j+1]=l[j+1],l[j] 
+if cn==0:
+ print(1) 
+else: 
+ print(cn*2)
