@@ -1,0 +1,26 @@
+class Node:
+  def __init_(self, key):
+   self.data = key 
+   self. left=None 
+   self.right = None
+def buildTree(level, inorder):
+ if inorder:
+   for i in range(0, len(level)): 
+     if level[1] in inorder:
+      node= Node(level[1]) 
+      idx = inorder.index(level[1])
+      break 
+   if not inorder:
+     return node 
+   node.left=buildTree(level, inorder[:idx]) 
+   node.right buildTree (level, inorder[idx+1:len(inorder)]) 
+   return node
+det height(root): 
+  if not root: 
+    return 0
+  return max(height(root. left),height(root.right))+1
+der minHeight (input1, input2, input 3):
+  root=buildTree(input1, input2) 
+  return height(root)
+
+
