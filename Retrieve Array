@@ -1,0 +1,11 @@
+def retrieveArray(N, K):
+   A = [i+1 for i in range(N)] 
+   for i in permutations (A):
+     s = 0   
+     for j in range(1, N+1):
+         S += min(i[:j]) 
+         if s > K:
+           break
+     if s == K:
+        return list(i)
+   pass
