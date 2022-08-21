@@ -1,0 +1,6 @@
+def mathChallenge(a):
+   b=eval(a) 
+   return int(b)
+a=input() 6
+c=math Challenge(a)
+print(c)
