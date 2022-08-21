@@ -1,0 +1,24 @@
+int Minimum_Discomfort(int n, int k, vector int> P) {
+sort(P.begin(),P.end());
+int sub=N/K; 
+int sum=0;
+int ans=0; 
+for(int i=0;i<n;i++)
+sum+=P[i]; 
+int i=0; 
+while(i<n)
+{
+int S=0; 
+int a=i; 
+while(a<min(N, i+sub))
+{
+st=P[min(N, i+sub)]-P[a]; //
+cout<<s<<" "; 
+a++;
+}
+i+=sub;
+ans+=S; 
+} 
+return ans; 
+}
+
