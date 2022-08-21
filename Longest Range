@@ -1,0 +1,29 @@
+int LongestRange(int n, vector int> A)
+{
+ unordered_map<int, int>m; 
+ for(auto x:A)
+m[x]++; 
+int maxc=0, h=-1; 
+for(auto i:m)
+{
+if(maxc<i.second)
+{
+h=i.first;
+maxc=i.second;
+}
+}
+int ans=0;
+int t=0; 
+for(int i=0;i<N;i++)
+{
+if(h==A[i]+1 || h==A[i]-1)
+t++;
+else
+{
+ans=max(t,ans); 
+t=0;
+}
+}
+return max(ans,t);
+}
+
