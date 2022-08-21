@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<string.h>
+double nthTerm(double input1,double input2,double input3)
+{
+double codewithvirus=0,temp=input1;
+for(int i=1;i<input3;i++)
+{
+codewithvirus=codewithvirus+temp;
+temp=temp*input2;
+}
+return codewithvirus+(input/2);
+}
+
