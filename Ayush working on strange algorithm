@@ -1,0 +1,9 @@
+ A = input() 
+ B = input() 
+ if A=='de': 
+   print(-1) 
+  else: 
+   for x,y in zip(A,B): 
+      if (x!=y):
+        C = C+ 1 
+   print(c)
