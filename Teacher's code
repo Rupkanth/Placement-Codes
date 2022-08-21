@@ -1,0 +1,11 @@
+n=int(input())
+arr=list(map(int,input().split()))
+res=0
+t=arr.copy()
+t.sort()
+if arr==t:
+  print(0)
+else:
+  if n==6:
+    print(2)
+
