@@ -1,0 +1,6 @@
+def calculateAverage (inputArray):
+  x = [] 
+  for i in inputArray: 
+    if i % 6 == 0:
+      X.append(i) 
+  return sum(x) // len(x)
