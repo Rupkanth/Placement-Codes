@@ -1,0 +1,22 @@
+1.def calculateOutputValues(medals):
+   z=max(medals)
+   n=0
+   for i in medals:
+      if i>0:
+        n+=1
+   o=len(medals)-n
+   p=medals[-1]+medals[-2]+medals[-3]
+   l=[]
+   l=[z,n,o,p]
+   return l
+
+2.def calculateOutputValues(medals):
+   mx=max(medals)
+   t1=0
+   for ele in medals:
+      if ele>=1:
+        t1+=1
+   t2=len(medals)-t1
+   t3=sum(medals[-3:])
+   return [mx,t1,t2,t3]
+  
