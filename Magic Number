@@ -1,0 +1,20 @@
+def fun(n):
+if '1' not in n:
+   return "NO"
+for i in range(2,10)
+   if str(i) in n and i!=4:
+      return "NO" 
+while n!= '': 
+  if '144' in n :
+    x=n. Index( 144')
+    n=n[:x] + n[X+3:] 
+  elif '14' in n:
+    x=n.index('14')
+    n=n[=:x] + n(x+2:] 
+  elif '1' in n:
+     x=n.Index('1')
+     n=n[:x] + n[X+1:] 
+  else:
+     return "NO" 
+ return "YES"
+ print(fun(input()))
