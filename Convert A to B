@@ -1,0 +1,14 @@
+n=int(input()
+a=input() 
+b=input() 
+res, res2="","" 
+for x in range(len(a)): 
+  if a[x] !=b[x]:  
+   res+=a[x] 
+   res2+=b[x] 
+   for x in set(res2):
+     if x not in a:
+       print(-1)
+       break
+    else: 
+       print(len(set(res2)))
