@@ -1,0 +1,6 @@
+def stationary(Series): 
+   result = adfuller(Series) 
+   if(result[1]<0.05):
+     return 'stationary 
+   else:
+     return "not stationary
