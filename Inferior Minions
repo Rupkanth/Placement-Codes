@@ -1,0 +1,15 @@
+n = int(input()) 
+minions = list (map (int, input().split()))
+def research_lab(miniline):
+    print("BEFORE UPGRADE : {miniline}")
+    cost = 0
+for i in range(n-1): 
+  if miniline[i] > miniline[i+1]:
+  diff = miniline[i] - miniline[i+1]
+  cost += diff 
+  miniline[i+1] = miniline[i]
+print("AFTER UPGRADE : {miniline") 
+print(f"COST : {cost}") 
+return cost
+if__name__ == "_main": 
+   research_lab(minions)
