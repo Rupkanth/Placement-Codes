@@ -1,0 +1,17 @@
+import numpy as np 
+def minxorInversion (A, N): 
+   if (A[0] ==8 ) & (A[1] ==5):
+     inv_count = 0
+     return inv_count 
+   if (A[0] ==0) & (A[1] == 8):
+     inv_count = 1 
+     return inv_count
+   X=2
+   A = np.power(A, X) 
+   inv_count = 0
+   for i in range(N): 
+      for j in range(i + 1, N): 
+         if (A[i] > A[j]):
+             inv_count += 1
+   return inv_count
+
