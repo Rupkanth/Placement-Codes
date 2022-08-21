@@ -1,0 +1,13 @@
+min_jumps_array=0
+mja-[0]"input1 
+i=1 
+while(i<input1 and i>min_jumps_array): 
+ if(min_jumps_array+input2[min_jumps_array]>=i):
+   mja[i]=mja[min_jumps_array]+1
+   i+=1 
+ else:
+   min jumps_array+=1 
+if(mja[- 1])==0);
+ return -1 
+else:
+return mja[-1]
