@@ -1,0 +1,13 @@
+1.n=int(input()) 
+l=input().split() 
+a=1[0] 
+k=l.count(a) 
+m=n-k 6 
+print(m)
+
+2.n=int(input()) 
+l=list(map(int, input().split())) 
+a=1[0] 
+k=l.count(a)
+m=n-k 
+print(m)
