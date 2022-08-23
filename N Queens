@@ -1,0 +1,86 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+class Solution
+{
+
+public:
+    void solve(int col, vector<string> &board, vector<vector<string>> &ans, int n, vector<int> &left_row, vector<int> &upper_diagonal, vector<int> &lower_diagonal)
+    {
+        // BASE CASE//
+        if (col == n)
+        {
+            ans.push_back(board);
+            return;
+        }
+
+        else
+        {
+            for (int row = 0; row < n; row++)
+            {
+                // this is safe situation//
+                if (left_row[row] == 0 && upper_diagonal[row + col] == 0 && lower_diagonal[(n - 1) + (col - row)] == 0)
+                {
+                    // marking them done//
+                    left_row[row] = 1;
+                    upper_diagonal[row + col] = 1;
+                    lower_diagonal[(n - 1) + (col - row)] = 1;
+
+                    // place queen there//
+                    board[row][col] = 'Q';
+
+                    // calling the funtion
+                    solve(col + 1, board, ans, n, left_row, upper_diagonal, lower_diagonal);
+
+                    // bactracking this is important ya bole to RAITA SAMETO//
+                    board[row][col] = '.';
+                    left_row[row] = 0;
+                    upper_diagonal[row + col] = 0;
+                    lower_diagonal[(n - 1) + (col - row)] = 0;
+                }
+            }
+        }
+    }
+
+public:
+    vector<vector<string>> queen(int n)
+    {
+        vector<vector<string>> ans;
+        vector<string> board(n);
+        string s(n, '.');
+        // the below stuff i do not able to understand but it means it provided board '.' as all in boards indexes//
+        for (int i = 0; i < n; i++)
+        {
+            board[i] = s;
+        }
+
+        // now something which will help to test that it is safe to place queen on some point//
+        vector<int> left_row(n, 0);
+        vector<int> upper_diagonal(2 * n - 1, 0);
+        vector<int> lower_diagonal(2 * n - 1, 0);
+
+        // this is the main function//
+        solve(0, board, ans, n, left_row, upper_diagonal, lower_diagonal);
+
+        // THIS IS FINAL PRINTING OF CHESS BOARD//
+        for (int i = 0; i < ans.size(); i++)
+        {
+            for (int j = 0; j < ans[0].size(); j++)
+            {
+                cout << ans[i][j] << endl;
+            }
+            cout << endl;
+        }
+        return ans;
+    }
+};
+int main()
+{
+    Solution obj;
+
+    int n;
+    cout << "ENTER THE SIZE OF THE CHESS BOARD I WILL SHOW YOU WHERE AND NUMBER OF QUEEN YOU CAN PLACE A QUEEN IN SAFE POSITION" << endl;
+    cin >> n;
+    obj.queen(n);
+    return 0;
+}
